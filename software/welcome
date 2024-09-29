@@ -14,12 +14,12 @@ public class welcome {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(0, 0, 1133, 744);
 
-        // ปุ่ม START
-        JButton button2 = new JButton("START");
-        button2.setBackground(Color.decode("#E5B6B3"));
-        button2.setForeground(Color.WHITE);
-        button2.setBounds(517, 452, 110, 40);
-        layeredPane.add(button2, JLayeredPane.PALETTE_LAYER);
+       // ปุ่ม START
+        JButton start = new JButton("START");
+        start.setBackground(Color.decode("#E5B6B3"));
+        start.setForeground(Color.WHITE);
+        start.setBounds(517, 452, 110, 40);
+        layeredPane.add(start, JLayeredPane.PALETTE_LAYER);
 
         //ใส่welcome
         ImageIcon imageIcon = new ImageIcon("D:\\Lab\\การสร้างซอฟต์แวร์\\Lab 1-6\\miniProject\\wel.png");
