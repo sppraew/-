@@ -1,0 +1,100 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class Login {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setSize(1133, 744);
+        frame.setTitle("โปรแกรมคำนวณภาษีหนึ่งเดียวที่คุณไว้ใจ");
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("project.jpg"));
+        frame.getContentPane().setBackground(Color.decode("#D8F5FF"));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
+
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setBounds(0, 0, 1133, 744);
+
+        DisplayGraphics m = new DisplayGraphics();
+        m.setBounds(0, 0, 1133, 744);
+        layeredPane.add(m, JLayeredPane.DEFAULT_LAYER);
+
+        // ปุ่ม Home
+        JButton button = new JButton("HOME");
+        button.setBackground(Color.decode("#80C8CD"));
+        button.setForeground(Color.WHITE);
+        button.setBounds(20, 20, 120, 50);
+        layeredPane.add(button, JLayeredPane.PALETTE_LAYER);
+
+        // ปุ่ม Back
+        JButton button1 = new JButton("BACK");
+        button1.setBackground(Color.decode("#E5B6B3"));
+        button1.setForeground(Color.WHITE);
+        button1.setBounds(427, 622, 120, 50);
+        layeredPane.add(button1, JLayeredPane.PALETTE_LAYER);
+
+        // ปุ่ม NEXT
+        JButton button2 = new JButton("NEXT");
+        button2.setBackground(Color.decode("#A5CBB0"));
+        button2.setForeground(Color.WHITE);
+        button2.setBounds(587, 622, 120, 50);
+        layeredPane.add(button2, JLayeredPane.PALETTE_LAYER);
+
+        // กล่องชื่อ+PIN
+        JLabel namel1 = new JLabel("ชื่อ-นามสกุล");
+        namel1.setBounds(272, 180, 200, 100);
+        namel1.setFont(new Font("Tahoma", Font.BOLD, 28));
+        namel1.setForeground(Color.BLACK);
+        layeredPane.add(namel1, JLayeredPane.PALETTE_LAYER);
+
+        JTextField namet1 = new JTextField();
+        namet1.setFont(new Font("Tahoma", Font.BOLD, 28));
+        namet1.setBounds(272, 260, 600, 50);
+        layeredPane.add(namet1, JLayeredPane.PALETTE_LAYER);
+
+        JLabel PIN1 = new JLabel("PIN");
+        PIN1.setBounds(272, 310, 200, 100);
+        PIN1.setFont(new Font("Tahoma", Font.BOLD, 28));
+        PIN1.setForeground(Color.BLACK);
+        layeredPane.add(PIN1, JLayeredPane.PALETTE_LAYER);
+
+        JTextField PIN2 = new JTextField();
+        PIN2.setFont(new Font("Tahoma", Font.BOLD, 28));
+        PIN2.setBounds(272, 390, 600, 50);
+        layeredPane.add(PIN2, JLayeredPane.PALETTE_LAYER);
+
+        // กรณ๊
+        JButton button3 = new JButton("*กรณีเข้าใช้งานครั้งแรกกดที่นี่เพื่อสร้าง PIN 6 หลัก");
+        button3.setFont(new Font("Tahoma", Font.BOLD, 15));
+        button3.setBounds(272, 435, 400, 30);
+        button3.setOpaque(false); 
+        button3.setContentAreaFilled(false); 
+        button3.setBorder(null); 
+        layeredPane.add(button3, JLayeredPane.PALETTE_LAYER);
+
+        //ลืมรหัสผ่าน
+        JButton button4 = new JButton("*ลืมรหัสผ่าน");
+        button4.setFont(new Font("Tahoma", Font.BOLD, 15));
+        button4.setBounds(782, 435, 90, 30);
+        button4.setOpaque(false); 
+        button4.setContentAreaFilled(false); 
+        button4.setBorder(null); 
+        layeredPane.add(button4, JLayeredPane.PALETTE_LAYER);
+
+        frame.add(layeredPane);
+        frame.setVisible(true);
+
+    }
+}
+
+// เส้น
+class DisplayGraphics extends JPanel {
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        setOpaque(false);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.decode("#6390BA"));
+        g2d.setStroke(new BasicStroke(7));
+        g.drawLine(0, 90, 1133, 90);
+    }
+
+}
