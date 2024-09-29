@@ -1,0 +1,39 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class welcome {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setSize(1133, 744);
+        frame.setTitle("โปรแกรมคำนวณภาษีหนึ่งเดียวที่คุณไว้ใจ");
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("project.jpg"));
+        frame.getContentPane().setBackground(Color.decode("#D8F5FF"));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
+
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setBounds(0, 0, 1133, 744);
+
+        // ปุ่ม START
+        JButton button2 = new JButton("START");
+        button2.setBackground(Color.decode("#E5B6B3"));
+        button2.setForeground(Color.WHITE);
+        button2.setBounds(517, 452, 110, 40);
+        layeredPane.add(button2, JLayeredPane.PALETTE_LAYER);
+
+        //ใส่welcome
+        ImageIcon imageIcon = new ImageIcon("D:\\Lab\\การสร้างซอฟต์แวร์\\Lab 1-6\\miniProject\\wel.png");
+        Image image = imageIcon.getImage();
+        Image newimg = image.getScaledInstance(800, 600,  java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(newimg);  
+        JLabel imageLabel = new JLabel(imageIcon);
+        imageLabel.setBounds(167, 32, 800, 600); 
+        
+        layeredPane.add(imageLabel, JLayeredPane.PALETTE_LAYER);  
+        
+        frame.add(layeredPane);  
+        frame.setVisible(true);
+    }
+}
+
+
